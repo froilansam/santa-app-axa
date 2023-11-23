@@ -1,4 +1,5 @@
 import { IMessageState } from "../../types/SantaForm.types";
+import { useLocation } from "react-router-dom";
 
 /**
  * Sends a message to Santa.
@@ -14,7 +15,7 @@ export const postSendMessage = async ({ id, message }: IMessageState) => {
     body: JSON.stringify({ id, message }),
   };
 
-  const response = await fetch("http://localhost:3000/santa", requestOptions);
+  const response = await fetch(`${window.location.href}santa`, requestOptions);
 
   return response;
 };
