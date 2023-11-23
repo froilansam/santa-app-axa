@@ -13,8 +13,8 @@ import morgan from "morgan";
 import cors from "cors";
 import { json } from "body-parser";
 import { AddressInfo } from "net";
-import santaRouter from "./src/server/routes/santa";
-import { sendEmail } from "./src/server/services/email";
+import santaRouter from "./src/server/routes/santa.route";
+import { sendEmail } from "./src/server/services/email.service";
 import path from "path";
 
 require("dotenv").config();

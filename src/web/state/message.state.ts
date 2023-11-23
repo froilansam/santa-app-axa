@@ -5,8 +5,8 @@
  */
 
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { postSendMessage } from "../services/api";
-import { messagesLookUp } from "../constants/messages";
+import { postSendMessage } from "../services/api.service";
+import { messagesLookUp } from "../constants/messages.constant";
 import {
   EStatus,
   IMessageState,

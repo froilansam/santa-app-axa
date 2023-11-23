@@ -11,7 +11,7 @@ import {
   ISantaFormFieldProps,
   ValidationRules,
 } from "../../../../types/SantaFormField.types";
-import { santaFormProps } from "../../../constants/messages";
+import { santaFormProps } from "../../../constants/messages.constant";
 import Form from "react-bootstrap/Form";
 
 /**

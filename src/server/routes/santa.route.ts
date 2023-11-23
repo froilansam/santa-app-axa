@@ -13,8 +13,12 @@ import {
   IUserProfilesResponse,
   IUserResponse,
 } from "../../types/SantaForm.types";
-import { fetchUserData, userProfilesURL, usersURL } from "../services/api";
-import { addRequest } from "../services/email";
+import {
+  fetchUserData,
+  userProfilesURL,
+  usersURL,
+} from "../services/api.service";
+import { addRequest } from "../services/email.service";
 import { isDateLessThan10YearsOld } from "../utils/helpers";
 
 const router = express.Router();
