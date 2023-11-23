@@ -60,13 +60,7 @@ sample.env -> .env
 npm run start
 ```
 
-6. Start the application:
-
-```sh
-npm run start:vite
-```
-
-7. Enjoy the app! Go to [`Santa App`](http://localhost:3001)! 🎅🏽🎄
+7. Enjoy the app! Go to [`Santa App`](http://localhost:3000)! 🎅🏽🎄
 
 ## Project Structure
 

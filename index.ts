@@ -15,6 +15,7 @@ import { json } from "body-parser";
 import { AddressInfo } from "net";
 import santaRouter from "./src/server/routes/santa";
 import { sendEmail } from "./src/server/services/email";
+import path from "path";
 
 require("dotenv").config();
 
@@ -24,6 +25,8 @@ app.use(cors());
 app.use(json());
 app.use(morgan("dev"));
 app.use(santaRouter);
+
+app.use(express.static(path.join(__dirname)));
 
 const listener = app.listen(process.env.PORT || 3000, () => {
   setInterval(sendEmail, 15000);

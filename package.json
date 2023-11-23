@@ -4,14 +4,16 @@
   "description": "A simple Node app built on Express, instantly up and running.",
   "main": "index.ts",
   "scripts": {
+    "start": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\"",
     "start:vite": "vite --port 3001",
-    "start": "ts-node-dev --respawn --transpile-only index.ts"
+    "vite:build": "vite build"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
     "@vitejs/plugin-react": "^3.1.0",
     "body-parser": "^1.20.2",
     "bootstrap": "^5.3.2",
+    "concurrently": "^8.2.2",
     "cors": "^2.8.5",
     "date-fns": "^2.30.0",
     "dotenv": "^16.0.3",
