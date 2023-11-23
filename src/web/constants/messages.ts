@@ -1,8 +1,11 @@
-import { ISantaFormProps } from "../types/SantaFormField.types";
-
 /**
- * Lookup table for messages related to Santa.
+ * This file contains the following:
+ * An array called "messagesLookUp" that stores objects with "code" and "message" properties. These objects represent different messages related to sending messages to Santa.
+ * An object called "santaFormProps" that implements the "ISantaFormProps" interface. It contains properties such as "id" and "message" with their respective labels, error messages, placeholders, and types.
+ * This file is used to define constants related to messages and form properties for sending messages to Santa in a Santa app.
  */
+import { ISantaFormProps } from "../../types/SantaFormField.types";
+
 export const messagesLookUp = [
   {
     code: "1",
@@ -21,9 +24,6 @@ export const messagesLookUp = [
   },
 ];
 
-/**
- * The configuration object for the Santa form.
- */
 export const santaFormProps: ISantaFormProps = {
   id: {
     label: "Who are you?",

@@ -13,7 +13,7 @@ export interface IUserResponse {
 export interface IUserProfilesResponse {
   address: string;
   birthdate: string;
-  userUid: string;
+  userUid?: string;
 }
 
 export interface ISendMessageAction {

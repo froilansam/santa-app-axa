@@ -1,21 +1,18 @@
 /**
- * @file This file contains the definition of the message slice and the sendMessage async thunk.
- * @module state/message
+ * This file defines a Redux slice named messages for managing state related to sending messages.
+ * It includes the necessary actions, reducers, and an async thunk for handling asynchronous API calls.
+ * The state managed by this slice includes message details, status indicators, and response messages.
  */
 
 import { PayloadAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
 import { postSendMessage } from "../services/api";
+import { messagesLookUp } from "../constants/messages";
 import {
   EStatus,
   IMessageState,
   ISendMessageAction,
-} from "../types/SantaForm.types";
-import { messagesLookUp } from "../constants/messages";
+} from "../../types/SantaForm.types";
 
-/**
- * The initial state of the message slice.
- */
 const initialState: IMessageState = {
   id: "",
   message: "",
@@ -23,7 +20,6 @@ const initialState: IMessageState = {
   responseMessage: "",
 };
 
-// Define the slice
 const messagesSlice = createSlice({
   name: "messages",
   initialState,
@@ -53,12 +49,6 @@ const messagesSlice = createSlice({
   },
 });
 
-/**
- * Async thunk to send a message.
- * @param {IMessageState} param - The message data.
- * @returns {Promise<ISendMessageAction>} The response data.
- * @throws {Error} If there is an error sending the message.
- */
 export const sendMessage = createAsyncThunk(
   "messages/sendMessage",
   async ({ id, message }: IMessageState) => {

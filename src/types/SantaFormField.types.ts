@@ -39,3 +39,9 @@ export interface ISantaFormFieldProps {
   errors: FieldErrors<IMessageState>;
   required: boolean;
 }
+
+export interface ISantaPendingRequest {
+  username: string;
+  address: string;
+  message: string;
+}

@@ -1,6 +1,17 @@
-const nodemailer = require("nodemailer");
+/**
+ * This service file contains the logic for sending emails.
+ * It uses the `nodemailer` library to send emails.
+ * It also contains a function that adds a request to an array of pending requests.
+ * It also contains a function that sends an email containing all pending requests.
+ * This file is used to send emails in a Santa app.
+ */
 
-// Transporter configuration
+import nodemailer from "nodemailer";
+import { ISantaPendingRequest } from "../../types/SantaFormField.types";
+
+const dotenv = require("dotenv");
+dotenv.config();
+
 const transporter = nodemailer.createTransport({
   host: "smtp.ethereal.email",
   port: 587,
@@ -10,20 +21,17 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-let pendingRequests = [];
+let pendingRequests: ISantaPendingRequest[] = [];
 
-// Function to add requests to the pendingRequests array
-const addRequest = (request) => {
+const addRequest = (request: ISantaPendingRequest) => {
   pendingRequests.push(request);
 };
 
-// Function to send email with pending requests
 const sendEmail = () => {
   if (pendingRequests.length === 0) {
     return;
   }
 
-  // Create the email text
   let emailText = "Pending requests:\n\n";
   for (let request of pendingRequests) {
     emailText += `Username: ${request.username}\n`;
@@ -31,17 +39,15 @@ const sendEmail = () => {
     emailText += `Message: ${JSON.stringify(request.message)}\n\n`;
   }
 
-  // Reset the pendingRequests array
   pendingRequests = [];
 
   let mailOptions = {
-    from: "do_not_reply@northpole.com", // sender address
-    to: "froilansam@gmail.com", // list of receivers
-    subject: "Pending Wish List", // Subject line
-    text: emailText, // plain text body
+    from: "do_not_reply@northpole.com",
+    to: "santa@northpole.com",
+    subject: "Pending Wish List",
+    text: emailText,
   };
 
-  // Send the email
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       return console.log(error);
@@ -50,7 +56,4 @@ const sendEmail = () => {
   });
 };
 
-module.exports = {
-  addRequest,
-  sendEmail,
-};
+export { addRequest, sendEmail };

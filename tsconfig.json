@@ -1,21 +1,21 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "useDefineForClassFields": true,
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "allowJs": false,
-    "skipLibCheck": true,
-    "esModuleInterop": false,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
+    "target": "ES6",
+    "jsx": "react",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "paths": {
+      "react": ["./node_modules/@types/react"]
+    },
+    "allowJs": true,
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react"
+    "strict": false,
+    "skipLibCheck": true
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["index.ts", "vite.config.ts"],
+  "exclude": ["node_modules"],
+  "ts-node": {
+    "esm": true
+  }
 }

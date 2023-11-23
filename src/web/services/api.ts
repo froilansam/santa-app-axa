@@ -1,4 +1,4 @@
-import { IMessageState } from "../types/SantaForm.types";
+import { IMessageState } from "../../types/SantaForm.types";
 
 /**
  * Sends a message to Santa.
