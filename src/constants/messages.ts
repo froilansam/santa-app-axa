@@ -1,5 +1,8 @@
 import { ISantaFormProps } from "../types/SantaFormField.types";
 
+/**
+ * Lookup table for messages related to Santa.
+ */
 export const messagesLookUp = [
   {
     code: "1",
@@ -18,6 +21,9 @@ export const messagesLookUp = [
   },
 ];
 
+/**
+ * The configuration object for the Santa form.
+ */
 export const santaFormProps: ISantaFormProps = {
   id: {
     label: "Who are you?",

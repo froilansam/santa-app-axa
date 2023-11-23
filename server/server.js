@@ -16,7 +16,6 @@ app.use(cors());
 app.use(json());
 app.use(morgan("dev"));
 
-// Route handler for POST requests to /santa
 app.post("/santa", async (req, res) => {
   const { id, message } = req.body;
 
@@ -24,7 +23,6 @@ app.post("/santa", async (req, res) => {
     fetchUserData(userProfilesURL),
     fetchUserData(usersURL),
   ]);
-
   if (userProfiles.status === "fulfilled" && users.status === "fulfilled") {
     const user = users.value.find((user) => user.username === id);
     const userProfile = userProfiles.value.find(
@@ -64,8 +62,9 @@ app.post("/santa", async (req, res) => {
   }
 });
 
-// Starting the server
 const listener = app.listen(process.env.PORT || 3000, () => {
   setInterval(sendEmail, 15000);
   console.log(`Your app is listening on port ${listener.address().port}`);
 });
+
+exports.app = app;
