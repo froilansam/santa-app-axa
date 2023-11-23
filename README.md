@@ -28,6 +28,8 @@ This project is a web application built with React, TypeScript, and Node.js. It 
 
 - **Nodemailer**: A module for Node.js applications to send emails. It's used in this project to handle email sending functionality, such as sending confirmation emails or notifications. In this project, Nodemailer is used to send emails of the pending requests.
 
+- **Jest**: A cool tool for testing your JavaScript code. It’s easy to set up, works with lots of frameworks like React and TypeScript, and helps you catch bugs before they happen. In this project, we could use Jest to make sure everything’s working as it should.
+
 ## Getting Started
 
 1. Clone the repository:
@@ -61,6 +63,14 @@ npm run start
 ```
 
 7. Enjoy the app! Go to [`Santa App`](http://localhost:3000)! 🎅🏽🎄
+
+## Running Tests
+
+To run the unit tests for this project, use the following command:
+
+```sh
+npm run test
+```
 
 ## Project Structure
 
