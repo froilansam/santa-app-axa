@@ -135,6 +135,4 @@ This structure is recommended because it promotes modularity and separation of c
 
 - **Froilan Sam Malibiran** - _Santa App_ - [froilansam](https://github.com/froilansam)
 
-```
 
-```
