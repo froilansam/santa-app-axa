@@ -13,7 +13,7 @@
  */
 
 import { configureStore } from "@reduxjs/toolkit";
-import messagesReducer from "../state/message.state";
+import messagesReducer from "../states/message.state";
 
 const store = configureStore({
   reducer: {
