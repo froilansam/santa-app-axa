@@ -1,4 +1,4 @@
-# Santa App AXA
+# Santa App AXA 🎅🏽
 
 ## Introduction
 
@@ -65,6 +65,8 @@ npm run start
 ```sh
 npm run start:vite
 ```
+
+7. Enjoy the app! Go to [`Santa App`](http://localhost:3001)! 🎅🏽🎄
 
 ## Project Structure
 
