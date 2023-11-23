@@ -33,13 +33,13 @@ This project is a web application built with React, TypeScript, and Node.js. It 
 1. Clone the repository:
 
 ```sh
-git clone <repository-url>
+git clone git@github.com:froilansam/santa-app-axa.git
 ```
 
 2. Navigate into the project directory:
 
 ```sh
-cd <project-directory>
+cd santa-app-axa
 ```
 
 3. Install the dependencies:
